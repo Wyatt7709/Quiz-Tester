@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-
+import customViteConfig from "./vite.config"
 
 export default defineConfig({
   e2e: {
@@ -13,6 +13,8 @@ export default defineConfig({
     devServer: {
       framework: "react",
       bundler: "vite",
+      viteConfig: customViteConfig
     },
+    specPattern: "cypress/**/**/*.cy.{js,ts,jsx,tsx}"
   },
 });
